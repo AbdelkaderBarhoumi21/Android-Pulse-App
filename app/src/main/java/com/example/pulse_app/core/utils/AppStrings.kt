@@ -2,7 +2,7 @@ package com.example.pulse_app.core.utils
 
 // Keep user-facing copy centralized. For full i18n, move to res/values/strings.xml
 // and resolve via stringResource(R.string.x). This object is the single source of copy.
-object UiText {
+object AppStrings {
     const val APP_NAME = "TaskPulse"
     const val TASKS_TITLE = "Tasks"
     const val NEW_TASK = "New task"
