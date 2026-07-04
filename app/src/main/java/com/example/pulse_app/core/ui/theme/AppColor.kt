@@ -1,4 +1,4 @@
-package com.example.pulse_app.ui.theme
+package com.example.pulse_app.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

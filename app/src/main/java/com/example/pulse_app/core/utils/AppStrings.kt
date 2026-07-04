@@ -1,4 +1,4 @@
-package com.example.pulse_app.utils
+package com.example.pulse_app.core.utils
 
 // Keep user-facing copy centralized. For full i18n, move to res/values/strings.xml
 // and resolve via stringResource(R.string.x). This object is the single source of copy.

@@ -1,4 +1,4 @@
-package com.example.pulse_app.utils
+package com.example.pulse_app.core.utils
 
 object AppConstants {
     const val DATABASE_NAME= "task_pulse.db"
