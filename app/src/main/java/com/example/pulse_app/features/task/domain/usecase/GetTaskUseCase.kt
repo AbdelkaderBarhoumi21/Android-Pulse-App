@@ -7,5 +7,5 @@ import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
 class GetTaskUseCase @Inject constructor(private val repo: TaskRepository): FlowUseCase<String, TaskModel?> {
-    override fun invoke(id: String): Flow<TaskModel?> = repo.observeTask(id)
+    override fun invoke(params: String): Flow<TaskModel?> = repo.observeTask(params)
 }
