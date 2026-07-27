@@ -15,6 +15,10 @@ class UpdateTaskUseCase @Inject constructor(private val repo: TaskRepository) :
     UseCase<UpdateTaskParams, TaskModel> {
 
     override suspend fun invoke(params: UpdateTaskParams) : AppResult<TaskModel> {
+        if(params.id.isEmpty() && params.id.isBlank()){
+            return AppResult.Error(AppFailure.ValidationFailure("id is required"))
+
+        }
         if(params.title != null && params.title.isBlank()){
             return AppResult.Error(AppFailure.ValidationFailure("Title cannot be blank"))
         }
