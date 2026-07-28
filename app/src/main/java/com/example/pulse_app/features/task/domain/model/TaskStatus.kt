@@ -4,7 +4,7 @@ package com.example.pulse_app.features.task.domain.model
 enum class TaskStatus(val wire: String) {
     PENDING("pending"), IN_PROGRESS("inProgress"), COMPLETED("completed");
     companion object {
-        fun fromWire(value: String): TaskStatus =
+        fun fromApi(value: String): TaskStatus =
             entries.firstOrNull { it.wire == value } ?: PENDING
     }
 }
