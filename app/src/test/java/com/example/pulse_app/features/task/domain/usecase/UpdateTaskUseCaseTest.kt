@@ -1,4 +1,4 @@
-package com.example.pulse_app.features.domain.usecase
+package com.example.pulse_app.features.task.domain.usecase
 import androidx.room.Update
 import com.example.pulse_app.core.error.AppFailure
 import com.example.pulse_app.core.result.AppResult
