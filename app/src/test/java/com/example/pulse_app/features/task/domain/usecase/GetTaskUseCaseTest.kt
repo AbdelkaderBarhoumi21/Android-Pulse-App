@@ -1,4 +1,4 @@
-package com.example.pulse_app.features.domain.usecase
+package com.example.pulse_app.features.task.domain.usecase
 
 import com.google.common.truth.Truth.assertThat
 import com.example.pulse_app.features.task.domain.model.TaskModel
