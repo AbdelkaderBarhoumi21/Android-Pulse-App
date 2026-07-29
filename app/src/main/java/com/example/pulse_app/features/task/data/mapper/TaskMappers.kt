@@ -33,7 +33,7 @@ fun TaskEntity.toDomain() = TaskModel(
 )
 
 // Domain -> Entity (with explicit sync state)
-fun TaskModel.toEntity()= TaskEntity(
+fun TaskModel.toEntity(syncState: SyncState)= TaskEntity(
     id = id,
     title = title,
     description = description,
