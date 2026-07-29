@@ -4,7 +4,7 @@ import androidx.room.Delete
 import com.example.pulse_app.core.network.ApiEndpoints
 import com.example.pulse_app.features.task.data.datasource.remote.dto.CreateTaskRequestDto
 import com.example.pulse_app.features.task.data.datasource.remote.dto.TaskDto
-import com.example.pulse_app.features.task.data.datasource.remote.dto.UpdateTasRequestDto
+import com.example.pulse_app.features.task.data.datasource.remote.dto.UpdateTaskRequestDto
 import retrofit2.http.*
 
 interface TaskApi{
@@ -22,7 +22,7 @@ interface TaskApi{
 
     /// Update task
     @PUT(ApiEndpoints.TASK_BY_ID)
-    suspend fun updateTask(@Path(ApiEndpoints.PATH_ID) id :String,@Body body: UpdateTasRequestDto): TaskDto
+    suspend fun updateTask(@Path(ApiEndpoints.PATH_ID) id :String,@Body body: UpdateTaskRequestDto): TaskDto
 
     /// Delete task
     @DELETE(ApiEndpoints.TASK_BY_ID)
