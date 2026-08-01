@@ -13,7 +13,7 @@ data class TaskEntity(
     val priority:String,
     val status:String,
     val createdAt: Instant,
-    val completedAt:Instant,
+    val completedAt:Instant?,
     val syncState: String = SyncState.SYNCED.name,
     val updatedAtLocal:Instant =Instant.now()
 )
