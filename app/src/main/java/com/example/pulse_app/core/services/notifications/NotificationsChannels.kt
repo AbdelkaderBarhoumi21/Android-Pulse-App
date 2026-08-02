@@ -5,7 +5,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 
-object NotificationsChannels {
+object NotificationChannels {
     const val TASKS = "tasks_channel"
 
     fun register(context: Context) {
