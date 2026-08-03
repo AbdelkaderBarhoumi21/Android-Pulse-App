@@ -18,7 +18,7 @@ import javax.inject.Singleton
 class LocalNotifier
     @Inject
     constructor(
-        @param:ApplicationContext private val context: Context,
+        @ApplicationContext private val context: Context,
     ) {
         fun show(payload: NotificationPayload) {
             // POST_NOTIFICATIONS runtime permission (Android 13+) must already be granted.
@@ -44,7 +44,8 @@ class LocalNotifier
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
                 )
             val notification =
-                NotificationCompat.Builder(context, NotificationChannels.TASKS)
+                NotificationCompat
+                    .Builder(context, NotificationChannels.TASKS)
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setContentTitle(payload.title)
                     .setContentText(payload.body)
@@ -55,7 +56,7 @@ class LocalNotifier
 
             NotificationManagerCompat.from(context).notify(
                 payload.taskId.hashCode(),
-                notification
+                notification,
             )
         }
     }
