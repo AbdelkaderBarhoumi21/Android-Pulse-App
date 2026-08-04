@@ -1,4 +1,4 @@
-package com.example.pulse_app.core.notifications
+package com.example.pulse_app.core.services.notifications
 
 import com.example.pulse_app.core.services.notifications.NotificationPayload
 import com.google.common.truth.Truth.assertThat

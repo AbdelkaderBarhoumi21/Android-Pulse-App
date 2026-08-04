@@ -1,5 +1,6 @@
 package com.example.pulse_app.core.services.notifications
 
+import com.example.pulse_app.core.services.sync.SyncScheduler
 import com.example.pulse_app.features.device.domain.usecase.RegisterDeviceUseCase
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
