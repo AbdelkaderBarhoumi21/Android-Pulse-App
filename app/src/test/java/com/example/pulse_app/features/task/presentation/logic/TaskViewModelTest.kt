@@ -1,4 +1,4 @@
-package com.example.pulse_app.features.task.data.presentation.logic
+package com.example.pulse_app.features.task.presentation.logic
 
 import app.cash.turbine.test
 import com.example.pulse_app.core.error.AppFailure
@@ -8,7 +8,6 @@ import com.example.pulse_app.features.task.domain.model.TaskPriority
 import com.example.pulse_app.features.task.domain.model.TaskStatus
 import com.example.pulse_app.features.task.domain.usecase.ObserveTasksUseCase
 import com.example.pulse_app.features.task.domain.usecase.RefreshTasksUseCase
-import com.example.pulse_app.features.task.presentation.logic.TaskListViewModel
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
 import io.mockk.every
@@ -27,7 +26,7 @@ import org.junit.Test
 import java.time.Instant
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class TasListViewModelTest {
+class TaskViewModelTest {
     private val observe = mockk<ObserveTasksUseCase>()
     private val refresh = mockk<RefreshTasksUseCase>()
 
