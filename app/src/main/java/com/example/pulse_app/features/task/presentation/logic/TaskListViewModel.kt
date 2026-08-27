@@ -32,6 +32,7 @@ class TaskListViewModel
                     tasks = tasks,
                     isLoading = refreshing,
                     errorMessage = error,
+                    isEmpty = tasks.isEmpty() && !refreshing && error == null,
                 )
             }.stateIn(
                 viewModelScope,
