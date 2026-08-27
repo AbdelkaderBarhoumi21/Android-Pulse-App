@@ -69,7 +69,10 @@ class TaskViewModelTest {
             coEvery { refresh(any()) } returns AppResult.Error(AppFailure.NetworkFailure)
 
             val vm = TaskListViewModel(observe, refresh)
-            runCurrent()
-            assertThat(vm.uiState.value.errorMessage).isEqualTo(AppFailure.NetworkFailure.message)
+            vm.uiState.test {
+                awaitItem() // Initial state
+                runCurrent()
+                assertThat(expectMostRecentItem().errorMessage).isEqualTo(AppFailure.NetworkFailure.message)
+            }
         }
 }
