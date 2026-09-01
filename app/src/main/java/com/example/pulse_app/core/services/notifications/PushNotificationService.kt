@@ -15,7 +15,9 @@ import javax.inject.Inject
 class PushNotificationService : FirebaseMessagingService() {
     @Inject
     lateinit var localNotifier: LocalNotifier
+    @Inject
     lateinit var registerDevice: RegisterDeviceUseCase
+    @Inject
     lateinit var syncScheduler: SyncScheduler
 
     private val scope = CoroutineScope(Dispatchers.IO)
@@ -36,7 +38,7 @@ class PushNotificationService : FirebaseMessagingService() {
         syncScheduler.scheduleImmediateSync()
 
         // 2) show our own notification (works in all states for data messages)
-        if (payload.title.isBlank()) localNotifier.show(payload)
+        if (payload.title.isNotBlank()) localNotifier.show(payload)
 
         super.onMessageReceived(message)
     }
