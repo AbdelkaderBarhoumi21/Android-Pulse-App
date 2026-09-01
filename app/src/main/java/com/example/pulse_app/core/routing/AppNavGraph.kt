@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.pulse_app.features.task.presentation.screens.TaskDetailScreen
+import com.example.pulse_app.features.task.presentation.screens.TaskEditScreen
 import com.example.pulse_app.features.task.presentation.screens.TaskListScreen
 
 @Composable
@@ -26,14 +28,27 @@ fun AppNavGraph(startTaskId: String? = null) {
         composable(
             Routes.TaskDetail.route,
             arguments = listOf(navArgument(Routes.TaskDetail.ARG) { type = NavType.StringType }),
-        ) { /* TaskDetailScreen(taskId, onEdit, onBack) */ }
+        ) {
+            TaskDetailScreen(
+                onBackClick = { nav.popBackStack() },
+                onEditClick = { nav.navigate(Routes.TaskEdit.build(it)) },
+            )
+        }
 
-        composable(Routes.TaskCreate.route) { /* TaskEditScreen(mode = Create, onDone = { nav.popBackStack() }) */ }
+        composable(Routes.TaskCreate.route) {
+            TaskEditScreen(
+                onBackClick = { nav.popBackStack() },
+            )
+        }
 
         composable(
             Routes.TaskEdit.route,
             arguments = listOf(navArgument(Routes.TaskEdit.ARG) { type = NavType.StringType }),
-        ) { /* TaskEditScreen(mode = Edit, onDone = { nav.popBackStack() }) */ }
+        ) {
+            TaskEditScreen(
+                onBackClick = { nav.popBackStack() },
+            )
+        }
     }
 
     // deep link from a tapped notification
